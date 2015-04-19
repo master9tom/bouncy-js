@@ -59,7 +59,7 @@ Ball.prototype.iterate = function() {
 
 
 var balls = [];
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 0; i++) {
 	var position = Point.random() * view.size,
 		vector = (Point.random() - [0.5, 0]) * [50, 100],
 		ball = new Ball(position, vector);
