@@ -78,10 +78,23 @@ function onMouseDrag(event) {
 }
 
 function onMouseUp(event) {
-	var ball = new Ball(event.point, lastDelta);
+	var x1 = 32;
+	var x2 = 42;
+	var x3 = 65;
+	var y1 = 23;
+	var y2 = 6;
+	var y3 = 65;
+	var ball = new Ball((x1,y2), lastDelta);
+	var ball2 = new Ball((x2,y1), lastDelta);
+	var ball3 = new Ball((x3,y3), lastDelta);
+	var ball4 = new Ball(event.point, lastDelta)
 	balls.push(ball);
+	balls.push(ball2);
+	balls.push(ball3);
+	balls.push(ball4)
 	lastDelta = null;
 }
+
 
 function onFrame() {
 	for (var i = 0, l = balls.length; i < l; i++)
