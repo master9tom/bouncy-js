@@ -59,7 +59,7 @@ Ball.prototype.iterate = function() {
 
 
 var balls = [];
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 0; i++) {
 	var position = Point.random() * view.size,
 		vector = (Point.random() - [0.5, 0]) * [50, 100],
 		ball = new Ball(position, vector);
@@ -78,18 +78,13 @@ function onMouseDrag(event) {
 }
 
 function onMouseUp(event) {
-	var x1 = Math.random()*100;
-	x1 = x1.toFixed(0);
-	var x2 = Math.random()*100;
-	x2 = x2.toFixed(0);
-	var x3 = Math.random()*1000;
-	x3 = x3.toFixed(0);
-	var y1 = 23;
-	var y2 = 6;
-	var y3 = 65;
-	var ball = new Ball((x1,y2), lastDelta);
-	var ball2 = new Ball((x2,y1), lastDelta);
-	var ball3 = new Ball((x3,y3), lastDelta);
+	c = 500;
+	var x1 = (Point.random() * view.size);
+	var x2 = (Point.random() * view.size);
+	var x3 = (Point.random() * view.size);
+	var ball = new Ball((x1), lastDelta);
+	var ball2 = new Ball((x2), lastDelta);
+	var ball3 = new Ball((x3), lastDelta);
 	var ball4 = new Ball(event.point, lastDelta)
 	balls.push(ball);
 	balls.push(ball2);
@@ -97,6 +92,8 @@ function onMouseUp(event) {
 	balls.push(ball4)
 	lastDelta = null;
 }
+
+
 function onFrame() {
 	for (var i = 0, l = balls.length; i < l; i++)
 		balls[i].iterate();
